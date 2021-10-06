@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Online File -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="./sem.css">
+    <title>Gpa-Calculator</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md sticky-top bg-dark" id="navebar">
+		<div class="navbar-header">
+			<h4 style="color: white;"><a href="../../index.html" style="text-decoration: none;font-size: 18px;" class="nav-link"><i class="fa fa-home"></i>&nbsp Home</a></h4>
+		</div>
+		<button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbar">
+		  <span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbar">
+		    <ul class="navbar-nav nav-pills text-center">
+				<li class="nav-item"><a class="nav-link activ text-center" href="../../index.html">GPA</a></li> 
+				<li class="nav-item"><a class="nav-link" href="../../cgpa/cgpa.html">&nbsp CGPA</a></li>   
+		    </ul>
+		</div>
+	</nav>
+    <div class="container">
+            <div class="row" style="margin-bottom: 2rem;">
+                <div class="col-md-6 m-0" style="width: 100%;">
+                    <div class="jumbotron pb-0" style="width: fit-content;">
+                        <h2 class="text-center mb-5">GPA Calclulator</h2>
+                        <h6>Department:</h6><br>
+                        <select class="form-control mb-4" id="dept">
+                            <option value="">Select Dept..</option>
+                            <option value="cse" selected>CSE</option>
+                            <option value="ece">ECE</option>
+                            <option value="agri">Agri</option>
+                        </select>
+                        <h6  id="resultt">Semester:</h6><br>
+                        <select class="form-control" id="sem" >
+                            <option value="">Select Semester</option>
+                            <option value="1">1 Sem</option>
+                            <option value="2" selected>2 Sem</option>
+                            <option value="3">3 Sem</option>
+                            <option value="4">4 Sem</option>
+                            <option value="5">5 Sem</option>
+                            <option value="6">6 Sem</option>
+                            <option value="7">7 Sem</option>
+                            <option value="8">8 Sem</option>
+                        </select>
+                        <center class="mt-4">
+                            <button class="btn btn-dark" onclick="calculate()">Calculate</button>
+                            <h4 id="result" class="text-center text-danger mb-0 mt-4">
+                            </h4>
+                        </center>      
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="jumbotron jum">  
+                       <center>
+                        <table style="width:fit-content">
+                            <tr>
+                                <td colspan="2" class="sub pt-4">Technical English(HS8251)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="4" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="sub">Engineering Mathematics-II(MA8251)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="4" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="sub">Physics for Information
+                                    Science(PH8252)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="3" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="sub">Basic Electrical,Electronics and MeasurementEngineering(BE8255)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="3" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="sub">Enviromental Science and Engineering(GE8291)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="3" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="sub">Programingin C(CS8251)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="3" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2" class="sub">Engineering Pratices Laboratry(GE8261)</td>
+                            </tr>
+                            <tr>
+                                <td>credits&nbsp;&nbsp;<input type="text" value="2" class="credit form-control"></td>
+                                <td>
+                                 Grade:
+                                 <select class="sel form-control">
+                                     <option value="10">O</option>
+                                     <option value="9">A+</option>
+                                     <option value="8">A</option>
+                                     <option value="7">B+</option>
+                                     <option value="6">B</option>
+                                     <option value="0">U</option>
+                                 </select>
+                                </td>
+                             </tr>
+                             <tr>
+                                 <td colspan="2" class="sub">C Programing Laboratry(CS8261)</td>
+                             </tr>
+                             <tr>
+                                 <td>credits&nbsp;&nbsp;<input type="text" value="2" class="credit form-control"></td>
+                                 <td>
+                                  Grade:
+                                  <select class="sel form-control">
+                                      <option value="10">O</option>
+                                      <option value="9">A+</option>
+                                      <option value="8">A</option>
+                                      <option value="7">B+</option>
+                                      <option value="6">B</option>
+                                      <option value="0">U</option>
+                                  </select>
+                                 </td>
+                              </tr>
+                              <tr>
+                                  <td colspan="2">
+                                    <center>
+                                        <button type="button" class="btn btn-primary mt-3" onclick="result()" id="resultbutton">
+                                            <a href="#resultt" style="text-decoration: none;" class="text-white">Result</a>
+                                        </button>
+                                    </center> 
+                                  </td>
+                              </tr>
+                        </table>
+                       </center> 
+                    </div>       
+                </div>
+            </div>
+    </div>
+<script src="./main.js"></script>  
+</body>
+</html>
